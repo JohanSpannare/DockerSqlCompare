@@ -5,7 +5,7 @@ SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPref
 #RUN Invoke-Expression 'SQLToolbeltEssentials.exe extract ".\Redgate installers"'
 
 ADD . .
-#WORKDIR /Redgate Installers/SQL Compare 12.2.1.4077
-#RUN & cmd /S /C msiexec /i 'SQL Compare_12.2.1.4077_x86.msi' /t 'SQL Compare_12.2.1.4077_x86.mst' /qn /l install.log
+WORKDIR /Redgate Installers/SQL Compare 12.2.1.4077
+RUN & cmd /S /C msiexec /i 'SQL Compare_12.2.1.4077_x86.msi' /t 'SQL Compare_12.2.1.4077_x86.mst' /qn /l install.log
 
 CMD ["powershell"]
