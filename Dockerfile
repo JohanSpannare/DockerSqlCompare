@@ -8,4 +8,7 @@ ADD . .
 WORKDIR /Redgate Installers/SQL Compare 12.2.1.4077
 RUN & cmd /S /C msiexec /i 'SQL Compare_12.2.1.4077_x86.msi' /t 'SQL Compare_12.2.1.4077_x86.mst' /qn /l install.log
 
+WORKDIR /
+RUN Remove-Item -Path '.\Redgate Installers\' -Force -Recurse
+
 CMD ["powershell"]
