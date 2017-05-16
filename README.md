@@ -3,7 +3,7 @@
 ### Delete all containers
 docker rm $(docker ps -a -q)
 ### Delete all containers not running
-docker rm $(docker ps --filter "status=exited")
+docker rm $(docker ps -q --filter "status=exited")
 
 ### Delete all images 
 docker rmi $(docker images -q)
